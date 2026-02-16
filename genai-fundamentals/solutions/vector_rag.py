@@ -27,6 +27,7 @@ embedder = OpenAIEmbeddings(model="text-embedding-ada-002")
 # Create retriever
 retriever = VectorRetriever(
     driver,
+    neo4j_database=os.getenv("NEO4J_DATABASE"),
     index_name="moviePlots",
     embedder=embedder,
     return_properties=["title", "plot"],

@@ -33,6 +33,7 @@ examples = [
 # Build the retriever
 retriever = Text2CypherRetriever(
     driver=driver,
+    neo4j_database=os.getenv("NEO4J_DATABASE"),
     llm=t2c_llm,
     examples=examples,
 )

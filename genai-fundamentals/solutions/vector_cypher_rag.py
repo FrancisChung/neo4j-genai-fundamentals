@@ -39,6 +39,7 @@ ORDER BY userRating DESC
 # Create retriever
 retriever = VectorCypherRetriever(
     driver,
+    neo4j_database=os.getenv("NEO4J_DATABASE"),
     index_name="moviePlots",
     embedder=embedder,
     retrieval_query=retrieval_query,
